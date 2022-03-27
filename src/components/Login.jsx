@@ -1,8 +1,12 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
+
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     "email": "",
     "password": ""
@@ -25,9 +29,11 @@ const handle = (e) =>{
     .then((res)=>{
       if(res.data === "Incorrect Credentials"){
         props.showAlert("Incorrect Password. Please try again!", "danger");
+        navigate("/", { replace: true });
       }
       else{
         props.showAlert("Login Successful!","success");
+        navigate("/dashboard", { replace: true });
       }
     }).catch(error=>console.error())
   }
