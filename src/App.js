@@ -7,10 +7,10 @@ import Footer from './components/Footer';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Dashboard from './components/Dashboard';
+import Home from './components/Home';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -32,6 +32,28 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Login heading="Admin Login" showAlert={showAlert}/>}/>
       <Route exact path="/dashboard" element={<Dashboard/>}/>
+      <Route exact path="/students" element={<Home 
+      arg1="New Student Record"
+      arg2="View Student Records"
+      arg3="Update Student Details"
+      arg4="Delete Student Details"
+      />}/>
+      <Route exact path="/staffs" element={<Home 
+      arg1="New Staff Registration"
+      arg2="Views Staff records"
+      arg3="Update Staff records"
+      arg4="Delete Staff records"
+      />}/>
+    {/* Dashboard component will be replaced once contemporay component will be created */}
+    <Route exact path="/students/add" element={<Dashboard/>}/>
+    <Route exact path="/students/view" element={<Dashboard/>}/>
+    <Route exact path="/students/update" element={<Dashboard/>}/>
+    <Route exact path="/students/delete" element={<Dashboard/>}/>
+
+    <Route exact path="/staffs/add" element={<Dashboard/>}/>
+    <Route exact path="/staffs/view" element={<Dashboard/>}/>
+    <Route exact path="/staffs/update" element={<Dashboard/>}/>
+    <Route exact path="/staffs/delete" element={<Dashboard/>}/>
     </Routes>
     <Footer heading="All rights reserved, 2022"/>
     </BrowserRouter>
