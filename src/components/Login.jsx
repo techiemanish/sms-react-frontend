@@ -27,7 +27,7 @@ const handle = (e) =>{
       "password" : data.password
     })
     .then((res)=>{
-      if(res.data === "Incorrect Credentials"){
+      if(res.data.message === "Incorrect Credentials"){
         props.showAlert("Incorrect Password. Please try again!", "danger");
         navigate("/", { replace: true });
       }
