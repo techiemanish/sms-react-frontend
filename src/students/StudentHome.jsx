@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 function StudentHome(props) {
   return (
     <>
+    <center><h1 className='text-success'>Student Management System</h1></center>
     <div className="container mt-5 p-5">
     <div className="row row-cols-1 row-cols-md-4 g-4 ">
     <Link to="/students/add" className='nav-link'>
