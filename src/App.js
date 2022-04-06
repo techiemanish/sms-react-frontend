@@ -10,7 +10,8 @@ import {
   Route
 } from "react-router-dom";
 import Dashboard from './components/Dashboard';
-import Home from './components/Home';
+import StudentHome from './students/StudentHome';
+import StaffHome from './staffs/StaffHome';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -32,13 +33,13 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Login heading="Admin Login" showAlert={showAlert}/>}/>
       <Route exact path="/dashboard" element={<Dashboard/>}/>
-      <Route exact path="/students" element={<Home 
+      <Route exact path="/students" element={<StudentHome 
       arg1="New Student Record"
       arg2="View Student Records"
-      arg3="Update Student Details"
+      arg3="Update Student"
       arg4="Delete Student Details"
       />}/>
-      <Route exact path="/staffs" element={<Home 
+      <Route exact path="/staffs" element={<StaffHome
       arg1="New Staff Registration"
       arg2="Views Staff records"
       arg3="Update Staff records"
