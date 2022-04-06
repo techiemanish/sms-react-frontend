@@ -2,11 +2,11 @@ import React from 'react'
 
 function Footer(props) {
   return (
-    <nav className="navbar fixed-bottom navbar-light bg-success text-light">
-    <div className="container-fluid">
-      <center><h5>{props.heading}</h5></center>
+    
+    <div className="container-fluid fixed-bottom bg-success text-light p-2">
+      <h5><center>{props.heading}</center></h5>
     </div>
-    </nav>
+    
   )
 }
 
