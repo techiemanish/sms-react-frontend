@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Test() {
+function Test(props) {
   return (
       <>
     <div><h1>Testing</h1></div>

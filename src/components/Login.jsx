@@ -27,13 +27,15 @@ const handle = (e) =>{
       "password" : data.password
     })
     .then((res)=>{
+      //console.log(JSON.parse(res.request.responseText));
       if(res.data.message === "Incorrect Credentials"){
         props.showAlert("Incorrect Password. Please try again!", "danger");
         navigate("/", { replace: true });
       }
       else{
         props.showAlert("Login Successful!","success");
-        navigate("/dashboard", { replace: true });
+        navigate("/dashboard", {state: res.data});
+        // JSON.parse(res.request.responseText)
       }
     }).catch(error=>console.error())
   }

@@ -34,6 +34,7 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Login heading="Admin Login" showAlert={showAlert}/>}/>
       <Route exact path="/dashboard" element={<Dashboard/>}/>
+      <Route path= "*" element={<Login heading="Admin Login" showAlert={showAlert}/>}/>
       <Route exact path="/students" element={<StudentHome 
       arg1="New Student Record"
       arg2="View Student Records"

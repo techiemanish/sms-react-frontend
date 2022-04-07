@@ -59,7 +59,7 @@ function Registration(props) {
             "section": data.section,
             "emergency": data.emergency
         }).then((res)=>{
-            console.log(res.data);
+            console.log(res);
         })
         showAlert("Registration Successful!","success");
     }
