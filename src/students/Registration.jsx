@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import StudentNavBar from './StudentNavBar';
 import Alert from '../components/Alert';
+import { useNavigate } from "react-router-dom";
 
 function Registration(props) {
+    const navigate = useNavigate();
+
     const [alert, setAlert] = useState(null);
     const showAlert =(message, type)=>{
       setAlert({
@@ -59,7 +62,8 @@ function Registration(props) {
             "section": data.section,
             "emergency": data.emergency
         }).then((res)=>{
-            console.log(res);
+            //console.log(res.data);
+            navigate("/students/success", {state: res.data});
         })
         showAlert("Registration Successful!","success");
     }
