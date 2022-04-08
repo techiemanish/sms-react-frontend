@@ -24,7 +24,6 @@ function RegisteredStudent(props) {
         return ( 
             <>
             <StudentNavBar/>
-            <center><h1 className='text-success mt-3'>Student Registerd Successfully</h1></center>
             <div className="container text-success w-75 p-5 rounded-3" style={{marginTop:"20px",border:"2px solid #f1f1f1"}}>
                 <center><u><h2>Student Details</h2></u></center>
                 <h4 className="text-primary">Registration Id: <b className="text-success">{location.state.registrationId}</b></h4>

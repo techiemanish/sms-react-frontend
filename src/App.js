@@ -16,6 +16,8 @@ import Registration from './students/Registration';
 import RegisteredStudent from './students/RegisteredStudent';
 import ViewStudents from './students/ViewStudents';
 import FindById from './students/FindById';
+import DeleteStudent from './students/DeleteStudent';
+import UpdateStudent from './students/UpdateStudent';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -55,8 +57,8 @@ function App() {
     <Route exact path="/students/success" element={<RegisteredStudent/>}/>
     <Route exact path="/students/view" element={<ViewStudents heading ="Get all the registered Students" showAlert={showAlert}/>}/>
     <Route exact path="/students/findbyId" element={<FindById heading="Search Student by Id" showAlert={showAlert}/>}/>
-    <Route exact path="/students/update" element={<Dashboard/>}/>
-    <Route exact path="/students/delete" element={<Dashboard/>}/>
+    <Route exact path="/students/update" element={<UpdateStudent heading ="Update Student Details" showAlert={showAlert}/>}/>
+    <Route exact path="/students/delete" element={<DeleteStudent heading="Delete Student Record from the Database" showAlert={showAlert}/>}/>
 
     <Route exact path="/staffs/register" element={<Dashboard/>}/>
     <Route exact path="/staffs/view" element={<Dashboard/>}/>

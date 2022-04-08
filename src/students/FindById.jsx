@@ -8,22 +8,27 @@ function FindById(props) {
       }
     const [data , setData] = useState("");
 
+    const [display, setDisplay] = useState("none");
+
     const handle = (e) =>{
         const newData = {...data};
         newData[e.target.id] = e.target.value;
         setData(newData);
+        setDisplay("block");
         
     }
     const submitHandler = (e) =>{
         e.preventDefault();
         if(data.registrationId === undefined){
             props.showAlert("No record found!", "danger");
+            console.log("inside  1 if")
         }
         else{
             const endpoint ="http://localhost:5000/api/students/" + data.registrationId;
             axios.get(endpoint).then((res)=>{
             console.log(res.data)
                 if(res.data === null){
+                    console.log("inside if")
                     props.showAlert("No record found!", "danger");
                     setData("");
                 }
@@ -50,8 +55,7 @@ function FindById(props) {
         <button type="submit" className="btn btn-success">Submit</button>
     </form>
     </div>
-    
-    <div className="container-fluid w-100">
+    <div className="container-fluid w-100" style={{display:display}}>
     <div>
     <table className="table  my-3">
   <thead className = "table-success">
@@ -97,9 +101,9 @@ function FindById(props) {
 
     </div>
 
-    <center style={{marginBottom: '100px'}} >
+    {/* <center style={{marginBottom: '100px'}} >
       <button className='nav-link w-25 text-light bg-success mt-3' onClick={print} style={{border:"2px solid green",padding:"15px"}}>Print</button>
-    </center>
+    </center> */}
     
     </>
   )
