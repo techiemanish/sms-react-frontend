@@ -45,7 +45,7 @@ function RegisteredStudent(props) {
             </div>
             <center style={{marginBottom: '100px'}} >
                 <button className='nav-link w-25 text-light bg-success mt-3' onClick={print} style={{border:"2px solid green",padding:"15px"}}>Print</button>
-                <Link to="/students/add" className='nav-link text-light bg-success w-25 mt-3' style={{marginBottom: '100px',border:"2px solid green",padding:"15px"}}>New Student Registration</Link>
+                <Link to="/students/register" className='nav-link text-light bg-success w-25 mt-3' style={{marginBottom: '100px',border:"2px solid green",padding:"15px"}}>New Student Registration</Link>
             </center>
             </>
           )

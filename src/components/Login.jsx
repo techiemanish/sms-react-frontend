@@ -41,7 +41,7 @@ const handle = (e) =>{
   }
   return (
     <>
-    <div className="container p-4 card" style={{width: "30rem",marginTop:"40px",border:"2px solid #f1f1f1"}}>
+    <div className="container p-4 card" style={{width: "30rem",border:"2px solid #f1f1f1"}}>
     <div className="card-body">
         <center><h2 className="card-title text-success">{props.heading}</h2></center>
         <form method='POST' onSubmit={(e)=>{login(e)}} >

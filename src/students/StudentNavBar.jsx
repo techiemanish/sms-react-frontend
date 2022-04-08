@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function StudentNavBar(props) {
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-success " style={{marginTop: '-55px',position:"fixed",width:"100%"}}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-success " style={{marginTop: '-105px',position:"fixed",width:"100%"}}>
   <div className="container-fluid">
     <Link className="navbar-brand text-light" to="/students">Home</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@ function StudentNavBar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active text-light" aria-current="page" to="/students/add">Registration</Link>
+          <Link className="nav-link active text-light" aria-current="page" to="/students/register">Registration</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link text-light" to="/students/view">Find all Students</Link>

@@ -14,6 +14,8 @@ import StudentHome from './students/StudentHome';
 import StaffHome from './staffs/StaffHome';
 import Registration from './students/Registration';
 import RegisteredStudent from './students/RegisteredStudent';
+import ViewStudents from './students/ViewStudents';
+import FindById from './students/FindById';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -49,14 +51,14 @@ function App() {
       arg4="Delete Staff records"
       />}/>
     {/* Dashboard component will be replaced once contemporay component will be created */}
-    <Route exact path="/students/add" element={<Registration heading="New Student Registration" showAlert={showAlert}/>}/>
+    <Route exact path="/students/register" element={<Registration heading="New Student Registration" showAlert={showAlert}/>}/>
     <Route exact path="/students/success" element={<RegisteredStudent/>}/>
-    <Route exact path="/students/view" element={<Dashboard/>}/>
-    <Route exact path="/students/findbyId" element={<Dashboard/>}/>
+    <Route exact path="/students/view" element={<ViewStudents heading ="Get all the registered Students" showAlert={showAlert}/>}/>
+    <Route exact path="/students/findbyId" element={<FindById heading="Search Student by Id" showAlert={showAlert}/>}/>
     <Route exact path="/students/update" element={<Dashboard/>}/>
     <Route exact path="/students/delete" element={<Dashboard/>}/>
 
-    <Route exact path="/staffs/add" element={<Dashboard/>}/>
+    <Route exact path="/staffs/register" element={<Dashboard/>}/>
     <Route exact path="/staffs/view" element={<Dashboard/>}/>
     <Route exact path="/staffs/findbyId" element={<Dashboard/>}/>
     <Route exact path="/staffs/update" element={<Dashboard/>}/>
