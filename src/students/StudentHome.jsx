@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import DashboardNavBar from '../components/DashboardNavBar'
 
 function StudentHome(props) {
   return (
     <>
+    <DashboardNavBar/>
     <center><h1 className='text-success'>Student Management System</h1></center>
     <div className="container p-5">
     <div className="row row-cols-1 row-cols-md-4 g-4 ">

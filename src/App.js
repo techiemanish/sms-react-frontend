@@ -18,6 +18,12 @@ import ViewStudents from './students/ViewStudents';
 import FindById from './students/FindById';
 import DeleteStudent from './students/DeleteStudent';
 import UpdateStudent from './students/UpdateStudent';
+import StaffRegistration from './staffs/StaffRegistration';
+import RegisteredStaff from './staffs/RegisteredStaff';
+import ViewStaffs from './staffs/ViewStaffs';
+import StaffFindById from './staffs/StaffFindById';
+import DeleteStaff from './staffs/DeleteStaff';
+import UpdateStaff from './staffs/UpdateStaff';
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -59,12 +65,13 @@ function App() {
     <Route exact path="/students/findbyId" element={<FindById heading="Search Student by Id" showAlert={showAlert}/>}/>
     <Route exact path="/students/update" element={<UpdateStudent heading ="Update Student Details" showAlert={showAlert}/>}/>
     <Route exact path="/students/delete" element={<DeleteStudent heading="Delete Student Record from the Database" showAlert={showAlert}/>}/>
-
-    <Route exact path="/staffs/register" element={<Dashboard/>}/>
-    <Route exact path="/staffs/view" element={<Dashboard/>}/>
-    <Route exact path="/staffs/findbyId" element={<Dashboard/>}/>
-    <Route exact path="/staffs/update" element={<Dashboard/>}/>
-    <Route exact path="/staffs/delete" element={<Dashboard/>}/>
+        
+    <Route exact path="/staffs/register" element={<StaffRegistration heading="New Staff Registration" showAlert={showAlert}/>}/>
+    <Route exact path="/staffs/success" element={<RegisteredStaff/>}/>
+    <Route exact path="/staffs/view" element={<ViewStaffs heading ="Get all the registered Staffs" showAlert={showAlert}/>}/>
+    <Route exact path="/staffs/findbyId" element={<StaffFindById heading="Search Staff by Id" showAlert={showAlert}/>}/>
+    <Route exact path="/staffs/update" element={<UpdateStaff heading ="Update Staff Details" showAlert={showAlert}/>}/>
+    <Route exact path="/staffs/delete" element={<DeleteStaff heading="Delete Staff Record from the Database" showAlert={showAlert}/>}/>
     </Routes>
     <Footer heading="All rights reserved, 2022"/>
     </BrowserRouter>

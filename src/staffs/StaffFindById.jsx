@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import StudentNavBar from './StudentNavBar';
+import StaffNavBar from './StaffNavBar';
 
-function FindById(props) {
+function StaffFindById(props) {
     const print = () =>{
         window.print();
       }
@@ -23,7 +23,7 @@ function FindById(props) {
             props.showAlert("No record found!", "danger");
         }
         else{
-            const endpoint ="http://localhost:5000/api/students/" + data.registrationId;
+            const endpoint ="http://localhost:5000/api/staffs/" + data.registrationId;
             axios.get(endpoint).then((res)=>{
             // console.log(res.data)
                 if(res.data === null){
@@ -39,15 +39,14 @@ function FindById(props) {
         
         
     }
-
   return (
     <>
-    <StudentNavBar/>
+    <StaffNavBar/>
     <div className="container w-50 my-3">
     <form onSubmit={(e) => submitHandler(e)}>
             <h2 className ="my-3 text-success">{props.heading}</h2>
             <div className="mb-3">
-            <label htmlFor="registrationId" className="form-label text-success">Student Registration Id</label>
+            <label htmlFor="registrationId" className="form-label text-success">Staff Registration Id</label>
         <   input onChange={(e) => handle(e)} value={data.registrationId} type="number"  className="form-control" id="registrationId" required/>
             </div>
         <button type="submit" className="btn btn-success">Submit</button>
@@ -67,11 +66,8 @@ function FindById(props) {
       <th scope="col">Gender</th>
       <th scope="col">Address</th>
       <th scope="col">City</th>
-      <th scope="col">Pincode</th>
-      <th scope="col">State</th>
-      <th scope="col">Country</th>
-      <th scope="col">Class</th>
-      <th scope="col">Section</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Experience</th>
       <th scope="col">Emergency Contact Number</th>
     </tr>
   </thead>
@@ -86,11 +82,8 @@ function FindById(props) {
                 <td>{data.gender}</td>
                 <td>{data.address}</td>
                 <td>{data.city}</td>
-                <td>{data.pincode}</td>
-                <td>{data.state}</td>
-                <td>{data.country}</td>
-                <td>{data.student_class}</td>
-                <td>{data.section}</td>
+                <td>{data.qualification}</td>
+                <td>{data.experience}</td>
                 <td>{data.emergency}</td>
             </tr>
         </tbody>
@@ -107,4 +100,4 @@ function FindById(props) {
   )
 }
 
-export default FindById
+export default StaffFindById

@@ -4,6 +4,7 @@ import Staff from '../staffs/Staff'
 import Student from '../students/Student'
 import Login from './Login';
 import { useState } from 'react';
+import DashboardNavBar from './DashboardNavBar';
 
 
 function Dashboard(props) {

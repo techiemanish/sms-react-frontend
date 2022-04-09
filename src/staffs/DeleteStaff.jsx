@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import FindById from './FindById'
+import StaffFindById from './StaffFindById';
 
-function DeleteStudent(props) {
+function DeleteStaff(props) {
     const [data , setData] = useState({
         "registrationId": ""
     });
@@ -17,19 +17,19 @@ function DeleteStudent(props) {
     const submitHandler = (e) =>{
         e.preventDefault();
         console.log(data.registrationId)
-        const endpoint ="http://localhost:5000/api/students/" + data.registrationId;
+        const endpoint ="http://localhost:5000/api/staffs/" + data.registrationId;
         console.log(endpoint)
         axios.delete(endpoint);
-        props.showAlert("Student record has been deleted from the database!","success");
+        props.showAlert("Staff record has been deleted from the database!","success");
     }
   return (
     <>
-    <FindById heading="Search Student by Id" showAlert={props.showAlert}/>
+    <StaffFindById heading="Search Staff by Id" showAlert={props.showAlert}/>
     <div className="container w-50" style={{marginBottom:"100px"}}>
     <form onSubmit={(e) => submitHandler(e)}>
             <h2 className ="my-3 text-danger">{props.heading}</h2>
             <div className="mb-3">
-            <label htmlFor="registrationId" className="form-label text-success">Student Registration Id</label>
+            <label htmlFor="registrationId" className="form-label text-success">Staff Registration Id</label>
             <input onChange={(e) => handle(e)} value={data.registrationId} type="number"  className="form-control" id="registrationId" required/>
             </div>
         <button type="submit" className="btn btn-success">Submit</button>
@@ -40,4 +40,4 @@ function DeleteStudent(props) {
   )
 }
 
-export default DeleteStudent
+export default DeleteStaff
