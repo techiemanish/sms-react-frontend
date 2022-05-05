@@ -33,7 +33,7 @@ function Registration(props) {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        axios.post("http://localhost:5000/api/students/",{
+        axios.post("https://api-sms-backend.herokuapp.com/api/students/",{
             "registrationId": parseInt(data.registrationId),
             "name" : data.name,
             "fatherName": data.fatherName,

@@ -9,7 +9,7 @@ function ViewStudents(props) {
   const [student, setStudent] = useState([]);
 
     const ApiCall = () =>{
-      axios.get("http://localhost:5000/api/students/").then((response)=>{
+      axios.get("https://api-sms-backend.herokuapp.com/api/students/").then((response)=>{
         setStudent(response.data);
         props.showAlert("Records have been fetched Successfully!", "success");
       });

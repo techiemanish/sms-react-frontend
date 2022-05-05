@@ -23,7 +23,7 @@ function StaffFindById(props) {
             props.showAlert("No record found!", "danger");
         }
         else{
-            const endpoint ="http://localhost:5000/api/staffs/" + data.registrationId;
+            const endpoint ="https://api-sms-backend.herokuapp.com/api/staffs/" + data.registrationId;
             axios.get(endpoint).then((res)=>{
             // console.log(res.data)
                 if(res.data === null){

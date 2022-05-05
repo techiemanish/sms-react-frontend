@@ -17,7 +17,7 @@ function DeleteStaff(props) {
     const submitHandler = (e) =>{
         e.preventDefault();
         console.log(data.registrationId)
-        const endpoint ="http://localhost:5000/api/staffs/" + data.registrationId;
+        const endpoint ="https://api-sms-backend.herokuapp.com/api/staffs/" + data.registrationId;
         console.log(endpoint)
         axios.delete(endpoint);
         props.showAlert("Staff record has been deleted from the database!","success");

@@ -22,7 +22,7 @@ const handle = (e) =>{
 
   const login = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/login",{
+    axios.post("https://api-sms-backend.herokuapp.com/api/login",{
       "email":data.email,
       "password" : data.password
     })

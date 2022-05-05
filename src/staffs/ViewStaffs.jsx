@@ -8,7 +8,7 @@ function ViewStaffs(props) {
     const [staff, setStaff] = useState([]);
 
     const ApiCall = () =>{
-      axios.get("http://localhost:5000/api/staffs/").then((response)=>{
+      axios.get("https://api-sms-backend.herokuapp.com/api/staffs/").then((response)=>{
         setStaff(response.data);
         props.showAlert("Records have been fetched Successfully!", "success");
       });

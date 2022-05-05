@@ -30,7 +30,7 @@ function UpdateStaff(props) {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        const url ="http://localhost:5000/api/staffs/" + data.registrationId;
+        const url ="https://api-sms-backend.herokuapp.com/api/staffs/" + data.registrationId;
         axios.put(url,{
             "registrationId": parseInt(data.registrationId),
             "name" : data.name,

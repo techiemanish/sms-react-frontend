@@ -17,7 +17,7 @@ function DeleteStudent(props) {
     const submitHandler = (e) =>{
         e.preventDefault();
         console.log(data.registrationId)
-        const endpoint ="http://localhost:5000/api/students/" + data.registrationId;
+        const endpoint ="https://api-sms-backend.herokuapp.com/api/students/" + data.registrationId;
         console.log(endpoint)
         axios.delete(endpoint);
         props.showAlert("Student record has been deleted from the database!","success");
